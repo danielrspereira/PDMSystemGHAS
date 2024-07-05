@@ -38,7 +38,7 @@ jobs:
       with:
         name: Build-Artifacts
         path: |
-          PDMSystem/PDMSystem/bin/Release
+          PDMSystem/PDMSystem
 
 ###### ORIGINAL #################################################################      
     
