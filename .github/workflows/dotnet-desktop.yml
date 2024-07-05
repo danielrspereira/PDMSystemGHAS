@@ -35,14 +35,14 @@ jobs:
 
     # Create the upload folder for the artifacts
     - name: Check CI directory contents
-      run: dir PDMSystem/CI
+      run: dir CI
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3
       with:
         name: Build-Artifacts
         path: |
-          PDMSystem/CI
+          CI
 
 ###### ORIGINAL #################################################################      
     
