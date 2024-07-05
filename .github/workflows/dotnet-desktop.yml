@@ -32,11 +32,7 @@ jobs:
 
     - name: Build the solution
       run: msbuild PDMSystem.sln /p:Configuration=Release
-
-    # Create the upload folder for the artifacts
-    - name: Create CI directory
-      run: mkdir CI
-    
+   
     - name: Check CI directory contents
       run: dir CI
 
