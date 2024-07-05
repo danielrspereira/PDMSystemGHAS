@@ -32,9 +32,16 @@ jobs:
 
     - name: Build the solution
       run: msbuild PDMSystem.sln /p:Configuration=Release
-   
+
+    - name: Create CI directory if it doesn't exist
+      run: mkdir -p PDMSystem/CI
+        
     - name: Check CI directory contents
       run: dir CI
+
+    - name: Move build artifacts to CI directory
+      run: |
+        mv path/to/build/artifacts/* PDMSystem/CI/
 
     #- name: Copy Build Artifacts to CI Directory
     #  run: xcopy PDMSystem\PDMSystem\bin\Release CI /E /I /
@@ -43,8 +50,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Build-Artifacts
-        path: |
-          CI
+        path: PDMSystem/CI/*
 
 ###### ORIGINAL #################################################################      
     
