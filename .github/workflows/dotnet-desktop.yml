@@ -34,7 +34,10 @@ jobs:
       run: msbuild PDMSystem.sln /p:Configuration=Release
 
     - name: Create CI directory if it doesn't exist
-      run: mkdir -p PDMSystem/CI
+      run: |
+          if not exist "PDMSystem\CI" (
+            mkdir "PDMSystem\CI"
+          )
         
     - name: Check CI directory contents
       run: dir CI
