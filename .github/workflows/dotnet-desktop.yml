@@ -33,6 +33,13 @@ jobs:
     - name: Build the solution
       run: msbuild PDMSystem.sln /p:Configuration=Release
 
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Build-Artifacts
+        path: |
+          PDMSystem/PDMSystem/bin/Release
+
 ###### ORIGINAL #################################################################      
     
     # Install the .NET Core workload
