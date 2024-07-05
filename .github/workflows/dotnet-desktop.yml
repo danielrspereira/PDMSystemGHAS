@@ -28,7 +28,7 @@ jobs:
       uses: NuGet/setup-nuget@v2.0.0
 
     - name: Restore Nuget Packages
-      uses: IT-Service/restore-nuget-packages@v1.0.2
+      run: nuget restore PDMSystem.sln
 
     - name: Build the solution
       run: msbuild PDMSystem.sln /p:Configuration=Release
