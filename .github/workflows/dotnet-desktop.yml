@@ -35,9 +35,7 @@ jobs:
 
     - name: Create CI directory if it doesn't exist
       run: |
-          if not exist "PDMSystem\CI" (
-            mkdir "PDMSystem\CI"
-          )
+          if not exist "PDMSystem\CI" mkdir "PDMSystem\CI"
         
     - name: Check CI directory contents
       run: dir CI
