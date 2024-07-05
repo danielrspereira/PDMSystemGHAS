@@ -33,12 +33,16 @@ jobs:
     - name: Build the solution
       run: msbuild PDMSystem.sln /p:Configuration=Release
 
+    # Create the upload folder for the artifacts
+    - name: Check CI directory contents
+      run: dir PDMSystem/CI
+
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3
       with:
         name: Build-Artifacts
         path: |
-          PDMSystem/PDMSystem
+          PDMSystem/CI
 
 ###### ORIGINAL #################################################################      
     
