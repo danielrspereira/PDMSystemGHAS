@@ -40,8 +40,8 @@ jobs:
     - name: Check CI directory contents
       run: dir CI
 
-    - name: Copy Build Artifacts to CI Directory
-      run: xcopy PDMSystem\PDMSystem\bin\Release CI /E /I /
+    #- name: Copy Build Artifacts to CI Directory
+    #  run: xcopy PDMSystem\PDMSystem\bin\Release CI /E /I /
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3
