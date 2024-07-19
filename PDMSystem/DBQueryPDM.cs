@@ -72,7 +72,8 @@ namespace PDMSystem
             OracleConnection conn = new OracleConnection();
             try
             {
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings[db].ConnectionString;
+                //conn.ConnectionString = ConfigurationManager.ConnectionStrings[db].ConnectionString;
+                conn.ConnectionString = "DATA SOURCE=10.204.3.1:1521/PROD;" + "PERSIST SECURITY INFO=True;USER ID=username; password=password; Pooling = False; ";
                 conn.Open();
                 OracleCommand cmd = new OracleCommand();
                 cmd.CommandText = DBStringsPDM.SearchDocument(erpCode, ident, orderNo, pos, onlyCad);
