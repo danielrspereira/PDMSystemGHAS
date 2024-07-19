@@ -1,57 +1,57 @@
 
 name: CI
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-  workflow_dispatch:
+#on:
+#  push:
+#    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
+#  workflow_dispatch:
 
-jobs:
-  build:
-    runs-on: windows-latest
+#jobs:
+#  build:
+#    runs-on: windows-latest
 
-    env:
-      Solution_Name: PDMSystem.sln                        
-      Test_Project_Path: PDMSystem\PDMSystem.csproj                
+#    env:
+#      Solution_Name: PDMSystem.sln                        
+#      Test_Project_Path: PDMSystem\PDMSystem.csproj                
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+#    steps:
+#    - name: Checkout
+#      uses: actions/checkout@v4
     
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2
+#    - name: Setup MSBuild
+#      uses: microsoft/setup-msbuild@v2
 
-    - name: Setup NuGet.exe for use with actions
-      uses: NuGet/setup-nuget@v2.0.0
+#    - name: Setup NuGet.exe for use with actions
+#      uses: NuGet/setup-nuget@v2.0.0
 
-    - name: Restore Nuget Packages
-      run: nuget restore PDMSystem.sln
+#    - name: Restore Nuget Packages
+#      run: nuget restore PDMSystem.sln
 
-    - name: Build the solution
-      run: msbuild PDMSystem.sln /p:Configuration=Release
+#    - name: Build the solution
+#      run: msbuild PDMSystem.sln /p:Configuration=Release
 
-    - name: Create CI directory if it doesn't exist
-      run: |
+#    - name: Create CI directory if it doesn't exist
+#      run: |
           if not exist "PDMSystem\CI" mkdir "PDMSystem\CI"
         
-    - name: Check CI directory contents
-      run: dir CI
+#    - name: Check CI directory contents
+#      run: dir CI
 
-    - name: Move build artifacts to CI directory
-      run: |
-        mv path/to/build/artifacts/* PDMSystem/CI/
+#    - name: Move build artifacts to CI directory
+#      run: |
+#        mv path/to/build/artifacts/* PDMSystem/CI/
 
     #- name: Copy Build Artifacts to CI Directory
     #  run: xcopy PDMSystem\PDMSystem\bin\Release CI /E /I /
 
-    - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: Build-Artifacts
-        path: PDMSystem/CI/*
+#    - name: Upload Build Artifacts
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: Build-Artifacts
+#        path: PDMSystem/CI/*
 
 ###### ORIGINAL #################################################################      
     
