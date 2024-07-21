@@ -91,3 +91,7 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
+    - name: Check hardcoded credentials
+      uses: AdvancedSecurity-Dependency-Scanning@1
+      
