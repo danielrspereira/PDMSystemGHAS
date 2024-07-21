@@ -4,10 +4,7 @@ using System.Configuration;
 namespace PDMSystem
 {
     public class DBQueryPDM
-    {
-        string username = "username";
-        string password = "password";
-        
+    {       
         public Document[] ResultDocument(OracleCommand cmd)
         {
             using (var reader = cmd.ExecuteReader())
@@ -75,8 +72,7 @@ namespace PDMSystem
             OracleConnection conn = new OracleConnection();
             try
             {
-                //conn.ConnectionString = ConfigurationManager.ConnectionStrings[db].ConnectionString;
-                conn.ConnectionString = $"DATA SOURCE=10.204.3.1:1521/PROD; PERSIST SECURITY INFO=True;USER ID={username}; password={password}; Pooling = False; ";
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings[db].ConnectionString;
                 conn.Open();
                 OracleCommand cmd = new OracleCommand();
                 cmd.CommandText = DBStringsPDM.SearchDocument(erpCode, ident, orderNo, pos, onlyCad);
