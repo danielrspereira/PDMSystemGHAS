@@ -20,5 +20,24 @@
             // Dummy method to simulate using AWS credentials
             Console.WriteLine("Using AWS credentials...");
         }
+
+        public static void ConnectToAzure()
+        {
+            string azureStorageAccountName = "exampleaccountname"; // Example Azure Storage Account Name
+            string azureStorageAccountKey = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"; // Example Azure Storage Account Key
+
+            Console.WriteLine("Attempting to use the following Azure credentials:");
+            Console.WriteLine($"Azure Storage Account Name: {azureStorageAccountName}");
+            Console.WriteLine($"Azure Storage Account Key: {azureStorageAccountKey}");
+
+            // Simulate using the Azure credentials
+            UseAzureCredentials(azureStorageAccountName, azureStorageAccountKey);
+        }
+
+        static void UseAzureCredentials(string accountName, string accountKey)
+        {
+            // Dummy method to simulate using Azure credentials
+            Console.WriteLine("Using Azure credentials...");
+        }
     }
 }
